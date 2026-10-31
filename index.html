@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#2d3a2c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Brew a Witch Potion</title>
+<meta name="description" content="Grow herbs, brew potions and sell them to the village. A cosy witch game demo you can play in the browser.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Brew a Witch Potion">
+<meta property="og:description" content="Grow herbs, brew potions and sell them to the village. A cosy witch game demo you can play in the browser.">
+<meta property="og:url" content="https://chrisli328.github.io/brew-a-witch-potion/">
+<meta property="og:image" content="https://chrisli328.github.io/brew-a-witch-potion/img/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://chrisli328.github.io/brew-a-witch-potion/img/share.jpg">
+<link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="preload" href="fonts/Mali-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Mali-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="modulepreload" href="js/game.0a6d9927aa.js">
+<link rel="preload" href="img/manifest.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="css/game.021b8197ab.css">
+</head>
+<body data-lb="off">
+<canvas id="world"></canvas>
+<div id="tags"></div>
+
+<div id="hud" class="hidden">
+  <div class="hud-tl">
+    <div class="hud-row">
+      <div class="coins"><b id="coinN">0</b></div>
+      <div class="fame"><img src="img/ui/star.webp" alt=""><b id="fameN">Lv 1</b><span class="bar"><i></i></span></div>
+    </div>
+    <div id="quest" class="hidden"><span class="qtext"></span><b class="qprog"></b></div>
+    <div id="note" class="hidden"></div>
+  </div>
+  <div class="hud-tc"><div id="clock"><i class="sun"></i><span>--</span><em></em></div></div>
+  <div class="hud-tr">
+    <button class="hbtn" id="bBag" aria-label="Bag"><img src="img/ui/seeds.webp" alt=""><i class="badge hidden">0</i><u>Bag</u></button>
+    <button class="hbtn" id="bBook" aria-label="Recipes"><img src="img/ui/bottle.webp" alt=""><u>Recipes</u></button>
+    <button class="hbtn" id="bSet" aria-label="Menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.6a3.4 3.4 0 1 0 0 6.8 3.4 3.4 0 0 0 0-6.8Zm8.3 4.6-.1-2.4 2-1.6-2-3.4-2.4.9a8 8 0 0 0-2-1.2L15.3 3h-4l-.5 2.5c-.7.3-1.4.7-2 1.2l-2.4-.9-2 3.4 2 1.6a8 8 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-.9c.6.5 1.3.9 2 1.2l.5 2.5h4l.5-2.5c.7-.3 1.4-.7 2-1.2l2.4.9 2-3.4-2-1.6Z"/></svg><u>Menu</u></button>
+  </div>
+</div>
+
+<div id="touch" class="hidden"></div>
+<div id="stick" class="hidden"><i></i></div>
+<button id="act" class="hidden"><span></span></button>
+<div id="prompt" class="hidden"></div>
+<div id="qptr" class="hidden"><img src="img/ui/ui_arrow_r.webp" alt=""></div>
+
+<div id="dialog" class="hidden">
+  <div class="dlg-box">
+    <div class="dlg-name ribbon"><span></span></div>
+    <p class="dlg-text"></p>
+    <i class="dlg-next hidden"></i>
+  </div>
+  <div class="dlg-choices"></div>
+</div>
+
+<div id="panel" class="modal hidden"></div>
+<div id="brewRoot"></div>
+<div id="discovery" class="hidden"></div>
+<div id="toasts"></div>
+<div id="banner" class="banner"></div>
+<div id="fly"></div>
+
+<div id="title" class="hidden">
+  <div class="title-glow"></div>
+  <img class="logo" src="img/ui/logo.webp" alt="Brew a Witch Potion">
+  <div class="title-box">
+    <div class="title-new hidden">
+      <div class="ribbon sm"><span>A new witch</span></div>
+      <p class="ask">What is your name, little witch?</p>
+      <input id="nameIn" maxlength="12" autocomplete="off" spellcheck="false" placeholder="Your name">
+      <button class="btn-green" id="bBegin"><span>Begin</span></button>
+    </div>
+    <div class="title-main">
+      <button class="btn-green" id="bStart"><span>Start</span></button>
+      <p class="title-note">Time here follows your real clock. Plants keep growing and Kuro keeps selling while you are away.</p>
+    </div>
+  </div>
+  <p class="title-foot">Vertical slice demo. Townsfolk, buyers and other names are simulated.</p>
+</div>
+
+<div id="loading">
+  <div class="load-box">
+    <p>Gathering herbs...</p>
+    <div class="load-bar"><i></i></div>
+  </div>
+</div>
+<div id="rotate"><div class="rot-box"><div class="phone"></div><p>Turn your phone sideways to play</p></div></div>
+<div id="fade"></div>
+
+<script type="module" src="js/game.0a6d9927aa.js"></script>
+</body>
+</html>
